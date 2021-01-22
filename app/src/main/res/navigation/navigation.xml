@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/timersFragment">
+    <fragment
+        android:id="@+id/timersFragment"
+        android:name="com.example.tabatatimer.fragments.TimersFragment"
+        android:label="TimersFragment" >
+        <action
+            android:id="@+id/action_timersFragment_to_createTimerFragment"
+            app:destination="@id/createTimerFragment" />
+        <action
+            android:id="@+id/action_timersFragment_to_updateTimerFragment"
+            app:destination="@id/updateTimerFragment" />
+        <action
+            android:id="@+id/action_timersFragment_to_trainingTimerFragment"
+            app:destination="@id/trainingTimerFragment" />
+        <action
+            android:id="@+id/action_timersFragment_to_settingsActivity"
+            app:destination="@id/settingsActivity" />
+        <action
+            android:id="@+id/action_timersFragment_to_trainingActivity"
+            app:destination="@id/trainingActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTimerFragment"
+        android:name="com.example.tabatatimer.fragments.CreateTimerFragment"
+        android:label="CreateTimerFragment" >
+        <action
+            android:id="@+id/action_createTimerFragment_to_timersFragment"
+            app:destination="@id/timersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateTimerFragment"
+        android:name="com.example.tabatatimer.fragments.UpdateTimerFragment"
+        android:label="UpdateTimerFragment" >
+        <action
+            android:id="@+id/action_updateTimerFragment_to_timersFragment"
+            app:destination="@id/timersFragment" />
+        <argument
+            android:name="timer"
+            app:argType="com.example.tabatatimer.model.Timer" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainingTimerFragment"
+        android:name="com.example.tabatatimer.fragments.TrainingTimerFragment"
+        android:label="TrainingTimerFragment" >
+        <action
+            android:id="@+id/action_trainingTimerFragment_to_timersFragment"
+            app:destination="@id/timersFragment" />
+        <argument
+            android:name="currentTimer"
+            app:argType="com.example.tabatatimer.model.Timer" />
+    </fragment>
+    <activity
+        android:id="@+id/settingsActivity"
+        android:name="com.example.tabatatimer.SettingsActivity"
+        android:label="SettingsActivity" />
+    <activity
+        android:id="@+id/trainingActivity"
+        android:name="com.example.tabatatimer.TrainingActivity"
+        android:label="activity_training"
+        tools:layout="@layout/activity_training" >
+        <argument
+            android:name="MyTimer"
+            app:argType="com.example.tabatatimer.model.Timer" />
+    </activity>
+</navigation>

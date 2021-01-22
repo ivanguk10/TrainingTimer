@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TabataTimer</string>
+    <string name="add_string">+</string>
+    <string name="Name">Name</string>
+    <string name="Work">Work</string>
+    <string name="Start">Start</string>
+    <string name="Prepair">Preparation</string>
+    <string name="Pause">Pause</string>
+    <string name="Calm">Rest</string>
+    <string name="Exit">Do you want to quit training?</string>
+    <string name="Cansel">Do you want to exit the timer editor?</string>
+    <string name="SaveMess">Do you want to keep the timer?</string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    <string name="Cycle">Cycles</string>
+    <string name="Set">Sets</string>
+    <string name="Sleep">Calm Down</string>
+    <string name="Reset">Canceling</string>
+    <string name="Save">Save</string>
+    <string name="Training">Training</string>
+    <string name="Minus">-</string>
+    <string name="Preferences">Settings</string>
+    <string name="Fontstyle">Font Size</string>
+    <string name="Setsthefontstyle">Set font size</string>
+    <string name="Chooseafontstyle">Choose Font size</string>
+    <string name="Selectalanguage">Choose language</string>
+    <string name="Languageintheapp">App Language</string>
+    <string name="Language">Language</string>
+    <string name="Nighttheme">Dart theme</string>
+    <string name="Turnon">Turn ON</string>
+    <string name="Turnoff">Turn OFF</string>
+    <string name="Delete">DELETE</string>
+    <string name="DeleteAll">DELETE ALL</string>
+    <string name="Finish">Workout completed</string>
+    <string name="RestBTW">Rest between sets</string>
+    <string name="Final">Finish</string>
+    <string name="Time">TIME</string>
+    <string name="step">STEP</string>
+    <string name="update">Change</string>
+    <string name="settings_clear_warning">Are you sure, that you want to delete all timers?</string>
+    <string name="color">Color</string>
+    <string-array name="text_lang">
+        <item>Russian</item>
+        <item>English</item>
+    </string-array>
+    <string-array name="text_style">
+        <item>Small</item>
+        <item>Normal</item>
+        <item>Big</item>
+    </string-array>
+</resources>

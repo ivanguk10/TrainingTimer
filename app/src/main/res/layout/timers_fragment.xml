@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <data>
+        <variable
+            name="timerViewModel"
+            type="com.example.tabatatimer.viewmodels.TimerViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBack"
+        tools:context=".Timers"
+
+        app:titleTextColor="@color/colorText" >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/colorText" >
+
+            <Button
+                android:id="@+id/SettingsButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/repair"
+                android:layout_gravity="right"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ListTimer"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="55dp"
+
+            android:background="@color/colorBack"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <LinearLayout
+            android:layout_width="417dp"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                style="@style/KeyboardButton"
+                android:id="@+id/buttonAddTimer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimary"
+                android:text="+"
+                android:textColor="@color/colorText"
+                android:textCursorDrawable="@color/colorPrimaryDark" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

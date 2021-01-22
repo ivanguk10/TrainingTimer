@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TabataTimer</string>
+    <string name="add_string">+</string>
+    <string name="Name">Название</string>
+    <string name="Work">Работа</string>
+    <string name="Start">Старт</string>
+    <string name="Prepair">Подготовка</string>
+    <string name="Pause">Пауза</string>
+    <string name="Calm">Отдых</string>
+    <string name="Exit">Вы хотите выйти из тренировки?</string>
+    <string name="Cansel">Вы хотите прекратить создание таймера?</string>
+    <string name="SaveMess">Вы хотите прекратить редактирование таймера и сохранить его?</string>
+    <string name="Yes">Да</string>
+    <string name="No">Нет</string>
+    <string name="Cycle">Циклы</string>
+    <string name="Set">Сеты</string>
+    <string name="Sleep">Успокоиться</string>
+    <string name="Reset">Отмена</string>
+    <string name="Save">Сохранить</string>
+    <string name="Training">Тренировка</string>
+    <string name="Minus">-</string>
+    <string name="Preferences">Свойства</string>
+    <string name="Fontstyle">Стиль для шрифта</string>
+    <string name="Setsthefontstyle">Устанавливает стиль для шрифта</string>
+    <string name="Chooseafontstyle">Выберите стиль для шрифта</string>
+    <string name="Selectalanguage">Выберите язык</string>
+    <string name="Languageintheapp">Язык в приложении</string>
+    <string name="Language">Язык</string>
+    <string name="Nighttheme">Ночная тема</string>
+    <string name="Turnon">Включить</string>
+    <string name="Turnoff">Выключить</string>
+    <string name="Delete">Удалить</string>
+    <string name="DeleteAll">Удалить все</string>
+    <string name="Finish">Тренировка завершена</string>
+    <string name="RestBTW">Отдых между подходами</string>
+    <string name="Final">Финиш</string>
+    <string name="Time">ВРЕМЯ</string>
+    <string name="step">ЭТАП</string>
+    <string name="update">Изменить</string>
+    <string name="settings_clear_warning">Вы уверены, что хотите удалить все таймеры?</string>
+    <string name="color">Цвет</string>
+
+    <string-array name="text_lang">
+        <item>Русский</item>
+        <item>Английский</item>
+    </string-array>
+    <string-array name="text_style">
+        <item>Малый</item>
+        <item>Нормальный</item>
+        <item>Большой</item>
+    </string-array>
+</resources>
