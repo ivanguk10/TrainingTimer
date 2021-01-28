@@ -7,6 +7,7 @@ import android.media.SoundPool
 import android.os.IBinder
 import com.example.tabatatimer.R
 import com.example.tabatatimer.TrainingActivity
+import com.example.tabatatimer.enums.Action
 import kotlinx.coroutines.InternalCoroutinesApi
 import java.util.*
 import java.util.concurrent.Executors
@@ -38,7 +39,7 @@ class TimerService : Service() {
         service?.shutdownNow()
         scheduledFuture?.cancel(true)
         val intent = Intent(TrainingActivity.BROADCAST_ACTION)
-        intent.putExtra(TrainingActivity.CURRENT_ACTION, "pause")
+        intent.putExtra(TrainingActivity.CURRENT_ACTION, Action.Pause.action)
         intent.putExtra(TrainingActivity.NAME_ACTION, name)
         intent.putExtra(TrainingActivity.TIME_ACTION, currentTime.toString().toInt())
         super.onDestroy()
@@ -75,7 +76,7 @@ class TimerService : Service() {
         override fun run() {
             var intent = Intent(TrainingActivity.BROADCAST_ACTION)
             if (name == resources.getString(R.string.Finish)) {
-                intent.putExtra(TrainingActivity.CURRENT_ACTION, "work")
+                intent.putExtra(TrainingActivity.CURRENT_ACTION, Action.Work.action)
                 intent.putExtra(TrainingActivity.NAME_ACTION, name)
                 intent.putExtra(TrainingActivity.TIME_ACTION, "")
                 sendBroadcast(intent)
@@ -83,7 +84,7 @@ class TimerService : Service() {
             try {
                 currentTime = time
                 while (currentTime > 0) {
-                    intent.putExtra(TrainingActivity.CURRENT_ACTION, "work")
+                    intent.putExtra(TrainingActivity.CURRENT_ACTION, Action.Work.action)
                     intent.putExtra(TrainingActivity.NAME_ACTION, name)
                     intent.putExtra(
                         TrainingActivity.TIME_ACTION,
@@ -95,7 +96,7 @@ class TimerService : Service() {
                     currentTime--
                 }
                 intent = Intent(TrainingActivity.BROADCAST_ACTION)
-                intent.putExtra(TrainingActivity.CURRENT_ACTION, "clear")
+                intent.putExtra(TrainingActivity.CURRENT_ACTION, Action.Clear.action)
                 sendBroadcast(intent)
             } catch (e: InterruptedException) {
                 e.printStackTrace()

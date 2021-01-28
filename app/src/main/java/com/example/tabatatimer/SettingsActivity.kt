@@ -21,6 +21,8 @@ import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
+import com.example.tabatatimer.enums.Font
+import com.example.tabatatimer.enums.Language
 import com.example.tabatatimer.viewmodels.TimerViewModel
 import kotlinx.coroutines.InternalCoroutinesApi
 import java.util.*
@@ -40,20 +42,20 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         val font = sp.getString("text_style", "")
-        val listValue = sp.getString("text_lang", "не выбрано")
+        val listValue = sp.getString("text_lang", Language.EnglishEn.language)
         val locale: Locale
-        locale = if (listValue == "English" || listValue == "Английский") {
-            Locale("en")
+        locale = if (listValue == Language.EnglishEn.language || listValue == Language.EnglishRu.language) {
+            Locale(Language.EN.language)
         } else {
-            Locale("ru")
+            Locale(Language.RUS.language)
         }
         Locale.setDefault(locale)
 //
         val configuration = Configuration()
         configuration.locale = locale
-        if (font == "Малый" || font == "Small") {
+        if (font == Font.SmallRu.font || font == Font.SmallEn.font) {
             configuration.fontScale = 0.85.toFloat()
-        } else if (font == "Нормальный" || font == "Normal") {
+        } else if (font == Font.NormalRu.font || font == Font.NormalEn.font) {
             configuration.fontScale = 1.toFloat()
         } else {
             configuration.fontScale = 1.15.toFloat()
@@ -122,14 +124,14 @@ class SettingsActivity : AppCompatActivity() {
             }
 
             lang?.setOnPreferenceChangeListener { _, value ->
-                if (value.toString() == "English" || value.toString() == "Английский") {
-                    val locale = Locale("en")
+                if (value.toString() == Language.EnglishEn.language || value.toString() == Language.EnglishRu.language) {
+                    val locale = Locale(Language.EN.language)
                     Locale.setDefault(locale)
                     val configuration = Configuration()
                     configuration.locale = locale
                     activity?.resources?.updateConfiguration(configuration, null)
                 } else {
-                    val locale = Locale("ru")
+                    val locale = Locale(Language.RUS.language)
                     Locale.setDefault(locale)
                     val configuration = Configuration()
                     configuration.locale = locale
@@ -140,9 +142,9 @@ class SettingsActivity : AppCompatActivity() {
 
             font?.setOnPreferenceChangeListener { _, value ->
                 val configuration = requireActivity().baseContext.resources.configuration
-                if (value.toString() == "Малый" || value.toString() == "Small") {
+                if (value.toString() == Font.SmallRu.font || value.toString() == Font.SmallEn.font) {
                     configuration.fontScale = 0.85.toFloat()
-                } else if (value.toString() == "Нормальный" || value.toString() == "Normal") {
+                } else if (value.toString() == Font.NormalRu.font || value.toString() == Font.NormalRu.font) {
                     configuration.fontScale = 1.toFloat()
                 } else {
                     configuration.fontScale = 1.15.toFloat()

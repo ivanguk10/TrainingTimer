@@ -13,6 +13,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.navArgs
+import com.example.tabatatimer.enums.Action
 import com.example.tabatatimer.service.TimerService
 import kotlinx.android.synthetic.main.activity_training.*
 import java.util.ArrayList
@@ -45,7 +46,7 @@ class TrainingActivity : AppCompatActivity() {
 
         receiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
-                if (intent.getStringExtra(CURRENT_ACTION) == "work") {
+                if (intent.getStringExtra(CURRENT_ACTION) == Action.Work.action) {
                     val task = intent.getStringExtra(NAME_ACTION)
                     val status = intent.getStringExtra(TIME_ACTION)!!
                     if (status == "1") {
@@ -55,7 +56,7 @@ class TrainingActivity : AppCompatActivity() {
                     }
                     trainingStep.text = task
                     trainingTime.text = status
-                } else if (intent.getStringExtra(CURRENT_ACTION) == "clear") {
+                } else if (intent.getStringExtra(CURRENT_ACTION) == Action.Clear.action) {
                     clear()
                 } else {
                     valueStatusPause = intent.getStringExtra(NAME_ACTION)
