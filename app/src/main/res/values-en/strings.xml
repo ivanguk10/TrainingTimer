@@ -44,6 +44,12 @@
         <item>Russian</item>
         <item>English</item>
     </string-array>
+
+    <string-array name="text_lang_value">
+        <item>ru</item>
+        <item>en</item>
+    </string-array>
+
     <string-array name="text_style">
         <item>Small</item>
         <item>Normal</item>

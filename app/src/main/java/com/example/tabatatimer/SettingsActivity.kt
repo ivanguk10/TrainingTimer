@@ -23,6 +23,7 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
 import com.example.tabatatimer.enums.Font
 import com.example.tabatatimer.enums.Language
+import com.example.tabatatimer.enums.Setting
 import com.example.tabatatimer.viewmodels.TimerViewModel
 import kotlinx.coroutines.InternalCoroutinesApi
 import java.util.*
@@ -37,17 +38,17 @@ class SettingsActivity : AppCompatActivity() {
         //context = this
         sp = PreferenceManager.getDefaultSharedPreferences(this)
 
-        if (sp.getBoolean("theme", true)) {
+        if (sp.getBoolean(Setting.THEME.setting, true)) {
             setTheme(R.style.AppTheme)
         }
-
+//style
         val font = sp.getString("text_style", "")
-        val listValue = sp.getString("text_lang", Language.EnglishEn.language)
+        val listValue = sp.getString(Setting.LANG.setting, Language.EN.language)
         val locale: Locale
-        locale = if (listValue == Language.EnglishEn.language || listValue == Language.EnglishRu.language) {
+        locale = if (listValue == Language.EN.language) {
             Locale(Language.EN.language)
         } else {
-            Locale(Language.RUS.language)
+            Locale(Language.RU.language)
         }
         Locale.setDefault(locale)
 //
@@ -80,7 +81,7 @@ class SettingsActivity : AppCompatActivity() {
         ): View? {
 
             val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-            val isNight = prefs.getBoolean("theme", false)
+            val isNight = prefs.getBoolean(Setting.THEME.setting, false)
             val themedContext = ContextThemeWrapper(
                 requireActivity(), if (isNight) {
                     R.style.AppTheme_Dark
@@ -124,14 +125,14 @@ class SettingsActivity : AppCompatActivity() {
             }
 
             lang?.setOnPreferenceChangeListener { _, value ->
-                if (value.toString() == Language.EnglishEn.language || value.toString() == Language.EnglishRu.language) {
+                if (value.toString() == Language.EN.language) {
                     val locale = Locale(Language.EN.language)
                     Locale.setDefault(locale)
                     val configuration = Configuration()
                     configuration.locale = locale
                     activity?.resources?.updateConfiguration(configuration, null)
                 } else {
-                    val locale = Locale(Language.RUS.language)
+                    val locale = Locale(Language.RU.language)
                     Locale.setDefault(locale)
                     val configuration = Configuration()
                     configuration.locale = locale
